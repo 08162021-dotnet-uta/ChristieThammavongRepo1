@@ -24,7 +24,6 @@ namespace Calculator
         {
           // compute stuff
           return input1 + input2; //type inference, casting
-
         }
 
         static int Subtract(int input1, int input2)
