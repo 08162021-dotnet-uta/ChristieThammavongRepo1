@@ -8,7 +8,15 @@ namespace HelloCsharp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.ReadLine();
+
+            int number1;
+            int number2;
+            Console.WriteLine("Enter two numbers with a space in between:");
+            String input = Console.ReadLine();
+            number1 = Convert.ToInt32(input.Split(' ')[0]);
+            number2 = Convert.ToInt32(input.Split(' ')[1]);
+            Program program = new Program();
+            program.print(number1, number2);
         }
 
         public int add(int num1, int num2) {
