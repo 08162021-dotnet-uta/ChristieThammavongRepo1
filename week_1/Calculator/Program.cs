@@ -51,8 +51,14 @@ namespace Calculator
         static void Print(params int[] results)
         {
           // output stuff
+          /*
           for (int i = 0; i < results.Length; i++) {
             Console.WriteLine(results[i]);
+          }
+          */
+          foreach (var result in results) // C# specific, works better than for loop
+          {
+              Console.WriteLine(result);
           }
         }
     }
