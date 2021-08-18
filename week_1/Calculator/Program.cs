@@ -40,8 +40,12 @@ namespace Calculator
 
         static int Divide(int input1, int input2)
         {
+          if (input2 == 0) {
+            return -1;
+          } else {
           // compute stuff
-          return input1 / input2; //type inference, casting
+            return input1 / input2; //type inference, casting
+          }
         }
 
         static void Print(params int[] results)
