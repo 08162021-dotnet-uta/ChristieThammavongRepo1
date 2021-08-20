@@ -14,9 +14,9 @@ namespace Project0.StoreApplication.Storage.Repositories
     {
       Stores = new List<Store>()
       {
-        new Store(){ Name = "Store001" },
-        new Store(){ Name = "Store002" },
-        new Store(){ Name = "Store003" }
+        new BookStore(),
+        new BookStore(){ Name = "Store002" },
+        new BookStore(){ Name = "Store003" }
       };
     }
   }
