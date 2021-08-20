@@ -8,7 +8,6 @@ namespace Project0.StoreApplication.Storage.Repositories
     public List<Store> Stores
     {
       get;
-      set;
     }
 
     public StoreRepository()
