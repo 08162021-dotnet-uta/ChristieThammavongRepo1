@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
+using Serilog;
 
 namespace Project0.StoreApplication.Client
 {
@@ -9,6 +9,7 @@ namespace Project0.StoreApplication.Client
     {
         static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
             var p = new Program();
 
             p.PrintAllStoreLocations();
@@ -17,6 +18,7 @@ namespace Project0.StoreApplication.Client
 
         void PrintAllStoreLocations()
         {
+          Log.Information("method PrintAllStoreLocations");
           var storeRepository = new StoreRepository();
           int i = 1;
 
@@ -29,9 +31,10 @@ namespace Project0.StoreApplication.Client
 
         Store SelectAStore()
         {
+          Log.Information("in method SelectAStore");
           var sr = new StoreRepository().Stores;
 
-          Console.WriteLine("Select a Store: ");
+          Console.WriteLine("Select a BookStore: ");
 
           var option = int.Parse(Console.ReadLine());
           var store = sr[option - 1];
