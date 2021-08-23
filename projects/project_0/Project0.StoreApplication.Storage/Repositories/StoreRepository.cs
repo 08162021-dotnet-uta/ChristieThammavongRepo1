@@ -5,18 +5,18 @@ namespace Project0.StoreApplication.Storage.Repositories
 {
   public class StoreRepository
   {
-    public List<Store> Stores
+    public List<Bookstore> Bookstores
     {
       get;
     }
 
     public StoreRepository()
     {
-      Stores = new List<Store>()
+      Bookstores = new List<Bookstore>()
       {
-        new BookStore(),
-        new BookStore(){ Name = "Store002" },
-        new BookStore(){ Name = "Store003" }
+        new Bookstore() { Location = "Denver" },
+        new Bookstore() { Location = "Boulder" },
+        new Bookstore() { Location = "Colorado Springs" }
       };
     }
   }
