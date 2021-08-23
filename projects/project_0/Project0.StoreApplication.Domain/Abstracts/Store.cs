@@ -2,11 +2,11 @@ namespace Project0.StoreApplication.Domain.Abstracts
 {
   public abstract class Store
   {
-    public string Name { get; protected set; }
+    public string Location { get; set; }
 
     public override string ToString()
     {
-      return Name;
+      return "Bookstore - " + Location + ", CO";
     }
   }
 }
