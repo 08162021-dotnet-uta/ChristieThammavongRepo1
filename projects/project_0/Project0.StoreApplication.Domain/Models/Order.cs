@@ -14,7 +14,7 @@ namespace Project0.StoreApplication.Domain.Models
       set;
     }
 
-    public Store Store
+    public Bookstore Bookstore
     {
       get;
       set;
