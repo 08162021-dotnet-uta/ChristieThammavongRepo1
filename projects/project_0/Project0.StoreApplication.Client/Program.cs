@@ -22,19 +22,19 @@ namespace Project0.StoreApplication.Client
           var storeRepository = new StoreRepository();
           int i = 1;
 
-          foreach(var store in storeRepository.Stores)
+          foreach(var bookstore in storeRepository.Bookstores)
           {
-            System.Console.WriteLine(i + " - " + store);
+            System.Console.WriteLine(i + ": " + bookstore);
             i += 1;
           }
         }
 
-        Store SelectAStore()
+        Bookstore SelectAStore()
         {
           Log.Information("in method SelectAStore");
-          var sr = new StoreRepository().Stores;
+          var sr = new StoreRepository().Bookstores;
 
-          Console.WriteLine("Select a BookStore: ");
+          Console.WriteLine("Select a Bookstore: ");
 
           var option = int.Parse(Console.ReadLine());
           var store = sr[option - 1];
