@@ -12,7 +12,7 @@ namespace Project0.StoreApplication.Testing
       var sut = new StoreRepository();
 
       // act = execute sut for data
-      var actual = sut.Stores;
+      var actual = sut.Bookstores;
 
       // assert
       Assert.NotNull(actual);
