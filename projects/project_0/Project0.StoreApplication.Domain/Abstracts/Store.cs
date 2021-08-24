@@ -6,7 +6,7 @@ namespace Project0.StoreApplication.Domain.Abstracts
 
     public override string ToString()
     {
-      return "Bookstore - " + Location + ", CO";
+      return $"Bookstore - {Location}, CO";
     }
   }
 }
