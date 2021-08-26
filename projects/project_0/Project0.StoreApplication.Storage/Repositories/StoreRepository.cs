@@ -6,7 +6,7 @@ namespace Project0.StoreApplication.Storage.Repositories
 {
   public class StoreRepository
   {
-    string path = @"/home/christie/revature/christie_repo/data/bookstores.xml";
+    private const string path = @"/home/christie/revature/christie_repo/data/bookstores.xml";
     public List<Bookstore> Bookstores
     {
       get;
@@ -16,9 +16,9 @@ namespace Project0.StoreApplication.Storage.Repositories
     {
       var fileAdapter = new FileAdapter();
 
-      if (fileAdapter.ReadFromFile(path) == null)
+      if (fileAdapter.ReadFromFile<Bookstore>(path) == null)
       {
-        fileAdapter.SaveToFile(path, new List<Bookstore>()
+        fileAdapter.SaveToFile<Bookstore>(path, new List<Bookstore>()
         {
           new Bookstore() { Location = "Denver" },
           new Bookstore() { Location = "Boulder" },
@@ -26,7 +26,7 @@ namespace Project0.StoreApplication.Storage.Repositories
         });
       }
 
-      Bookstores = fileAdapter.ReadFromFile(path);
+      Bookstores = fileAdapter.ReadFromFile<Bookstore>(path);
     }
   }
 }
