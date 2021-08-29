@@ -1,2 +1,5 @@
 2021-08-28 22:55:07.850 -06:00 [INF] method: PrintRepoContent()
 2021-08-28 22:55:08.009 -06:00 [INF] method: SelectAStore()
+2021-08-28 23:23:24.099 -06:00 [INF] method: runProgram()
+2021-08-28 23:23:24.118 -06:00 [INF] method: PrintRepoContent()
+2021-08-28 23:23:24.221 -06:00 [INF] method: SelectAStore()
