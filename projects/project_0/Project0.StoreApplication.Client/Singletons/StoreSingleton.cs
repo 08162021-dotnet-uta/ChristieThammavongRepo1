@@ -12,6 +12,10 @@ namespace Project0.StoreApplication.Client.Singletons
     public List<Bookstore> Bookstores { get; }
     private static StoreSingleton _storeSingleton;
     private static readonly StoreRepository _storeRepository = new StoreRepository();
+    /// <summary>
+    /// Handler of Singleton Design Pattern
+    /// </summary>
+    /// <value></value>
     public static StoreSingleton Instance 
     {
       get
@@ -23,6 +27,13 @@ namespace Project0.StoreApplication.Client.Singletons
 
         return _storeSingleton;
       }
+    }
+    /// <summary>
+    /// Stores repository of bookstores
+    /// </summary>
+    private StoreSingleton()
+    {
+      Bookstores = _storeRepository.Bookstores;
     }
   }
 }

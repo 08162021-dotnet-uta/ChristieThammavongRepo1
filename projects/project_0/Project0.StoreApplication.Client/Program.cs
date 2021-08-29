@@ -1,7 +1,6 @@
 ﻿using System;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Models;
-using Project0.StoreApplication.Storage.Repositories;
 using Serilog;
 
 namespace Project0.StoreApplication.Client
@@ -28,10 +27,9 @@ namespace Project0.StoreApplication.Client
         private static void PrintRepoContent()
         {
           Log.Information("method: PrintRepoContent()");
-          var storeRepository = new StoreRepository();
           int i = 1;
 
-          foreach(var bookstore in storeRepository.Bookstores)
+          foreach(var bookstore in _storeSingleton.Bookstores)
           {
             System.Console.WriteLine(i + ": " + bookstore);
             i += 1;
@@ -41,12 +39,11 @@ namespace Project0.StoreApplication.Client
         private static Bookstore SelectAStore()
         {
           Log.Information("method: SelectAStore()");
-          var sr = new StoreRepository().Bookstores;
 
           Console.WriteLine("Select a Bookstore: ");
 
           var option = int.Parse(Console.ReadLine());
-          var store = sr[option - 1];
+          var store = _storeSingleton.Bookstores[option - 1];
 
           return store;
         }

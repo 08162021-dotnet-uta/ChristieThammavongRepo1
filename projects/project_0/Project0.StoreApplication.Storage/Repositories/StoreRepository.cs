@@ -4,6 +4,9 @@ using Project0.StoreApplication.Storage.Adapters;
 
 namespace Project0.StoreApplication.Storage.Repositories
 {
+  /// <summary>
+  /// Repository for Bookstores
+  /// </summary>
   public class StoreRepository
   {
     private const string path = @"/home/christie/revature/christie_repo/data/bookstores.xml";
