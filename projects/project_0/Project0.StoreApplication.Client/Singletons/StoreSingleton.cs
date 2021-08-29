@@ -13,7 +13,7 @@ namespace Project0.StoreApplication.Client.Singletons
     private static StoreSingleton _storeSingleton;
     private static readonly StoreRepository _storeRepository = new StoreRepository();
     /// <summary>
-    /// Handler of Singleton Design Pattern
+    /// Handler of Singleton Design Pattern for Stores
     /// </summary>
     /// <value></value>
     public static StoreSingleton Instance 
