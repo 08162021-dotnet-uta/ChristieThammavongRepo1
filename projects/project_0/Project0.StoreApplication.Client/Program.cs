@@ -5,20 +5,22 @@ using Serilog;
 
 namespace Project0.StoreApplication.Client
 {
-    class Program
+    internal class Program
     {
+
+        private const string _loggerFile = @"/home/christie/revature/christie_repo/data/logs.txt";
         static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+            Log.Logger = new LoggerConfiguration().WriteTo.File(_loggerFile).CreateLogger();
             var p = new Program();
 
-            p.PrintAllStoreLocations();
+            p.PrintRepoContent();
             Console.WriteLine(p.SelectAStore());
         }
 
-        void PrintAllStoreLocations()
+        void PrintRepoContent()
         {
-          Log.Information("method PrintAllStoreLocations");
+          Log.Information("method: PrintRepoContent()");
           var storeRepository = new StoreRepository();
           int i = 1;
 
@@ -31,7 +33,7 @@ namespace Project0.StoreApplication.Client
 
         Bookstore SelectAStore()
         {
-          Log.Information("in method SelectAStore");
+          Log.Information("method: SelectAStore()");
           var sr = new StoreRepository().Bookstores;
 
           Console.WriteLine("Select a Bookstore: ");
