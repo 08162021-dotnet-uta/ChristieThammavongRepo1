@@ -9,7 +9,7 @@ namespace Project0.StoreApplication.Storage.Repositories
   /// </summary>
   public class CustomerRepository
   {
-    string path = @"/home/christie/revature/christie_repo/data/customers.xml";
+    private const string path = @"/home/christie/revature/christie_repo/data/customers.xml";
     public List<Customer> Customers
     {
       get;
