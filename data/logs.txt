@@ -71,3 +71,6 @@
 2021-08-30 00:29:08.847 -06:00 [INF] method: runProgram()
 2021-08-30 00:29:08.943 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Customer>()
 2021-08-30 00:29:08.944 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Customer>()
+2021-08-30 00:34:45.313 -06:00 [INF] method: runProgram()
+2021-08-30 00:34:45.397 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Customer>()
+2021-08-30 00:34:45.398 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Customer>()
