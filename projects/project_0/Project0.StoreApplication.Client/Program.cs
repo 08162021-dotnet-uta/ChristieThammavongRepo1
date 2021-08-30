@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
+using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
 using Serilog;
 
@@ -9,62 +11,96 @@ namespace Project0.StoreApplication.Client
     {
         private const string _loggerFile = @"/home/christie/revature/christie_repo/data/logs.txt";
         private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
-        private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+        // private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+        // private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
 
         private static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration().WriteTo.File(_loggerFile).CreateLogger();
+          Log.Logger = new LoggerConfiguration().WriteTo.File(_loggerFile).CreateLogger();
 
-            runProgram();
+          runProgram();
         }
 
         private static void runProgram()
         {
           Log.Information("method: runProgram()");
-          PrintRepoContent();
-          //Console.WriteLine(SelectAStore());
-          Console.WriteLine(SelectACustomer());
+          MakeASelection<Customer>(_customerSingleton.Customers);
+          // Console.WriteLine(SelectAStore());
+          // Console.WriteLine(SelectACustomer());
+          // Console.WriteLine(SelectProducts());
         }
 
-        private static void PrintRepoContent()
+        private static void PrintRepoContent<T>(List<T> data) where T : class
         {
-          Log.Information("method: PrintRepoContent()");
+          Log.Information($"method: PrintRepoContent<{typeof(T)}>()");
           int i = 1;
 
-          // foreach(var bookstore in _storeSingleton.Bookstores)
-          // {
-          //   System.Console.WriteLine(i + ": " + bookstore);
-          //   i += 1;
-          // }
-          foreach(var customer in _customerSingleton.Customers)
+          foreach(var item in data)
           {
-            System.Console.WriteLine(i + ": " + customer);
+            System.Console.WriteLine(i + ": " + item);
             i += 1;
           }
+          // foreach(var customer in _customerSingleton.Customers)
+          // {
+          //   System.Console.WriteLine(i + ": " + customer);
+          //   i += 1;
+          // }
+          // foreach(var product in _productSingleton.Products)
+          // {
+          //   System.Console.WriteLine(i + ": " + product);
+          //   i += 1;
+          // }
         }
 
-        private static Bookstore SelectAStore()
+        private static int MakeASelection<T>(List<T> data) where T : class
         {
-          Log.Information("method: SelectAStore()");
+          Log.Information($"method: MakeASelection<{typeof(T)}>()");
 
-          Console.WriteLine("Select a Bookstore: ");
+          PrintRepoContent<T>(data);
+          string type = typeof(T).ToString();
+          string name = type.Substring(type.LastIndexOf(".") + 1);
 
-          var option = int.Parse(Console.ReadLine());
-          var store = _storeSingleton.Bookstores[option - 1];
+          Console.WriteLine($"Select a {name}:");
 
-          return store;
+          var selection = int.Parse(Console.ReadLine());
+
+          return selection;
         }
 
-        private static Customer SelectACustomer()
-        {
-          Log.Information("method: SelectACustomer()");
+        // private static Bookstore SelectAStore()
+        // {
+        //   Log.Information("method: SelectAStore()");
 
-          Console.WriteLine("Select a Customer: ");
+        //   Console.WriteLine("Select a Bookstore: ");
 
-          var option = int.Parse(Console.ReadLine());
-          var customer = _customerSingleton.Customers[option - 1];
+        //   var option = int.Parse(Console.ReadLine());
+        //   var store = _storeSingleton.Bookstores[option - 1];
 
-          return customer;
-        }
+        //   return store;
+        // }
+
+        // private static Customer SelectACustomer()
+        // {
+        //   Log.Information("method: SelectACustomer()");
+
+        //   Console.WriteLine("Select a Customer: ");
+
+        //   var option = int.Parse(Console.ReadLine());
+        //   var customer = _customerSingleton.Customers[option - 1];
+
+        //   return customer;
+        // }
+
+        // private static Product SelectProducts()
+        // {
+        //   Log.Information("method: SelectProducts()");
+
+        //   Console.WriteLine("Select a Product(s): ");
+
+        //   var option = int.Parse(Console.ReadLine());
+        //   var product = _productSingleton.Products[option - 1];
+
+        //   return product;
+        // }
     }
 }
