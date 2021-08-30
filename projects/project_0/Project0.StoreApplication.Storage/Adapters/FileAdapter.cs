@@ -4,8 +4,15 @@ using System.Xml.Serialization;
 
 namespace Project0.StoreApplication.Storage.Adapters
 {
+  /// <summary>
+  /// XML Serializer
+  /// </summary>
   public class FileAdapter
   {
+    /// <summary>
+    /// Generic ReadFromFile method
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public List<T> ReadFromFile<T>(string path) where T : class
     {
       if(!File.Exists(path))
@@ -18,6 +25,10 @@ namespace Project0.StoreApplication.Storage.Adapters
       return repository;
     }
 
+    /// <summary>
+    /// Generic SaveToFile method
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public void SaveToFile<T>(string path, List<T> repository) where T : class
     {
       var file = new StreamWriter(path);
