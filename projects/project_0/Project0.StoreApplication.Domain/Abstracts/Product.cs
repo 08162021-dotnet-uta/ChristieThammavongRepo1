@@ -10,10 +10,15 @@ namespace Project0.StoreApplication.Domain.Abstracts
   [XmlInclude(typeof(Fiction))]
   public abstract class Product
   {
+    public byte ProductID { get; set; }
     public string BookType { get; set; }
     public string Genre { get; set; }
     public decimal Price { get; set; }
 
+    /// <summary>
+    /// Overriding display of products
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
       return $"{BookType} - {Genre}: ${Price}";
