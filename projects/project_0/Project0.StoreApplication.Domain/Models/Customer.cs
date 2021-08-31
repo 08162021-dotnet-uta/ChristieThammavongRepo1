@@ -10,14 +10,14 @@ namespace Project0.StoreApplication.Domain.Models
     public byte CustomerID { get; set; }
     public string firstName { get; set; }
     public string lastName { get; set; }
-    public List<Order> Orders { get; set; }
+    // public List<Order> Orders { get; set; }
 
     public Customer()
     {
-      if (Orders.Count == 0)
-      {
-        Orders = new List<Order>();
-      }
+      // if (Orders.Count == 0)
+      // {
+      //   Orders = new List<Order>();
+      // }
     }
 
     /// <summary>

@@ -10,16 +10,16 @@ namespace Project0.StoreApplication.Domain.Abstracts
   {
     public byte StoreID { get; set; }
     public string Location { get; set; }
-    public List<Order> Orders { get; set; }
-    public List<Product> Products { get; set; }
+    // public List<Order> Orders { get; set; }
+    // public List<Product> Products { get; set; }
 
     public Store()
     {
-      if (Orders.Count == 0)
-      {
-        Orders = new List<Order>();
-      }
-      Products = new List<Product>();
+      // if (Orders.Count == 0)
+      // {
+      //   Orders = new List<Order>();
+      // }
+      // Products = new List<Product>();
     }
 
     /// <summary>
