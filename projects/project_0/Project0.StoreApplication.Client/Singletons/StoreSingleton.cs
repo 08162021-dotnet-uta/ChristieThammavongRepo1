@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
 
@@ -33,7 +34,7 @@ namespace Project0.StoreApplication.Client.Singletons
     /// </summary>
     private StoreSingleton()
     {
-      Bookstores = _storeRepository.Bookstores;
+      Bookstores = _storeRepository.Select();
     }
   }
 }

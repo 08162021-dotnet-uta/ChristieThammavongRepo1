@@ -11,7 +11,7 @@ namespace Project0.StoreApplication.Client
     {
         private const string _loggerFile = @"/home/christie/revature/christie_repo/data/logs.txt";
         private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
-        // private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+        private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
         // private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
 
         private static void Main(string[] args)
@@ -25,6 +25,7 @@ namespace Project0.StoreApplication.Client
         {
           Log.Information("method: runProgram()");
           MakeASelection<Customer>(_customerSingleton.Customers);
+          MakeASelection<Bookstore>(_storeSingleton.Bookstores);
           // Console.WriteLine(SelectAStore());
           // Console.WriteLine(SelectACustomer());
           // Console.WriteLine(SelectProducts());
