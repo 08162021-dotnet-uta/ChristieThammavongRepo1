@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
+using Project0.StoreApplication.Storage;
 using Serilog;
 
 namespace Project0.StoreApplication.Client
@@ -18,7 +19,8 @@ namespace Project0.StoreApplication.Client
         {
           Log.Logger = new LoggerConfiguration().WriteTo.File(_loggerFile).CreateLogger();
 
-          runProgram();
+          // runProgram();
+          HelloSQL();
         }
 
         private static void runProgram()
@@ -77,6 +79,18 @@ namespace Project0.StoreApplication.Client
           {
             Console.WriteLine("Your selection is not valid.");
             return -1;
+          }
+        }
+
+        private static void HelloSQL()
+        {
+          var def = new EF();
+
+            // def.SetCustomer(new Customer());
+
+          foreach (var item in def.GetCustomers())
+          {
+            Console.WriteLine(item);
           }
         }
     }
