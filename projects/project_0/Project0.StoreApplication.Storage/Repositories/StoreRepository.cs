@@ -11,7 +11,7 @@ namespace Project0.StoreApplication.Storage.Repositories
   /// </summary>
   public class StoreRepository : IRepository<Bookstore>
   {
-    private const string path = @"/home/christie/revature/christie_repo/data/bookstores.xml";
+    private const string _path = @"/home/christie/revature/christie_repo/data/bookstores.xml";
     private static readonly FileAdapter _fileAdapter = new FileAdapter();
     public List<Bookstore> Bookstores
     {
@@ -20,9 +20,9 @@ namespace Project0.StoreApplication.Storage.Repositories
 
     public StoreRepository()
     {
-      if (_fileAdapter.ReadFromFile<Bookstore>(path) == null)
+      if (_fileAdapter.ReadFromFile<Bookstore>(_path) == null)
       {
-        _fileAdapter.SaveToFile<Bookstore>(path, new List<Bookstore>()
+        _fileAdapter.SaveToFile<Bookstore>(_path, new List<Bookstore>()
         {
           new Bookstore() { Location = "Denver" },
           new Bookstore() { Location = "Boulder" },
@@ -43,7 +43,7 @@ namespace Project0.StoreApplication.Storage.Repositories
 
     public List<Bookstore> Select()
     {
-      return _fileAdapter.ReadFromFile<Bookstore>(path);
+      return _fileAdapter.ReadFromFile<Bookstore>(_path);
     }
 
     public bool Delete()
