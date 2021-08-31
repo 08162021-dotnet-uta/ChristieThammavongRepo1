@@ -24,9 +24,25 @@ namespace Project0.StoreApplication.Client
         private static void runProgram()
         {
           Log.Information("method: runProgram()");
-          MakeASelection<Customer>(_customerSingleton.Customers);
-          MakeASelection<Bookstore>(_storeSingleton.Bookstores);
-          MakeASelection<Product>(_productSingleton.Products);
+          Console.WriteLine("Are you a customer or a store representative? \n Type C for customer \n Type S for store representative");
+          string role = Console.ReadLine();
+          if (role == "C")
+          {
+            Log.Information("role: customer");
+            MakeASelection<Customer>(_customerSingleton.Customers);
+            MakeASelection<Bookstore>(_storeSingleton.Bookstores);
+            MakeASelection<Product>(_productSingleton.Products);
+          }
+          else if (role == "S")
+          {
+            Log.Information("role: store representative");
+            MakeASelection<Bookstore>(_storeSingleton.Bookstores);
+          }
+          else
+          {
+            Log.Information("role: input invalid");
+            Console.WriteLine("Invalid input.");
+          }
         }
 
         private static void PrintRepoContent<T>(List<T> data) where T : class
