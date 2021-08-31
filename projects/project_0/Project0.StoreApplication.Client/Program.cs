@@ -27,7 +27,6 @@ namespace Project0.StoreApplication.Client
           MakeASelection<Customer>(_customerSingleton.Customers);
           MakeASelection<Bookstore>(_storeSingleton.Bookstores);
           MakeASelection<Product>(_productSingleton.Products);
-          // Console.WriteLine(SelectProducts());
         }
 
         private static void PrintRepoContent<T>(List<T> data) where T : class
@@ -40,11 +39,6 @@ namespace Project0.StoreApplication.Client
             System.Console.WriteLine(i + ": " + item);
             i += 1;
           }
-          // foreach(var product in _productSingleton.Products)
-          // {
-          //   System.Console.WriteLine(i + ": " + product);
-          //   i += 1;
-          // }
         }
 
         private static int MakeASelection<T>(List<T> data) where T : class
@@ -59,7 +53,7 @@ namespace Project0.StoreApplication.Client
           
           var selection = int.Parse(Console.ReadLine());
 
-          if (selection < selection + 1)
+          if (selection < data.Count)
           {
             return selection;
           }
@@ -68,20 +62,6 @@ namespace Project0.StoreApplication.Client
             Console.WriteLine("Your selection is not valid.");
             return -1;
           }
-
-          // return selection;
         }
-
-        // private static Product SelectProducts()
-        // {
-        //   Log.Information("method: SelectProducts()");
-
-        //   Console.WriteLine("Select a Product(s): ");
-
-        //   var option = int.Parse(Console.ReadLine());
-        //   var product = _productSingleton.Products[option - 1];
-
-        //   return product;
-        // }
     }
 }
