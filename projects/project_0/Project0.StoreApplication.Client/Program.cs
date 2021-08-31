@@ -12,7 +12,7 @@ namespace Project0.StoreApplication.Client
         private const string _loggerFile = @"/home/christie/revature/christie_repo/data/logs.txt";
         private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
         private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
-        // private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
+        private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
 
         private static void Main(string[] args)
         {
@@ -26,8 +26,7 @@ namespace Project0.StoreApplication.Client
           Log.Information("method: runProgram()");
           MakeASelection<Customer>(_customerSingleton.Customers);
           MakeASelection<Bookstore>(_storeSingleton.Bookstores);
-          // Console.WriteLine(SelectAStore());
-          // Console.WriteLine(SelectACustomer());
+          MakeASelection<Product>(_productSingleton.Products);
           // Console.WriteLine(SelectProducts());
         }
 
@@ -41,11 +40,6 @@ namespace Project0.StoreApplication.Client
             System.Console.WriteLine(i + ": " + item);
             i += 1;
           }
-          // foreach(var customer in _customerSingleton.Customers)
-          // {
-          //   System.Console.WriteLine(i + ": " + customer);
-          //   i += 1;
-          // }
           // foreach(var product in _productSingleton.Products)
           // {
           //   System.Console.WriteLine(i + ": " + product);
@@ -62,35 +56,21 @@ namespace Project0.StoreApplication.Client
           string name = type.Substring(type.LastIndexOf(".") + 1);
 
           Console.WriteLine($"Select a {name}:");
-
+          
           var selection = int.Parse(Console.ReadLine());
 
-          return selection;
+          if (selection < selection + 1)
+          {
+            return selection;
+          }
+          else
+          {
+            Console.WriteLine("Your selection is not valid.");
+            return -1;
+          }
+
+          // return selection;
         }
-
-        // private static Bookstore SelectAStore()
-        // {
-        //   Log.Information("method: SelectAStore()");
-
-        //   Console.WriteLine("Select a Bookstore: ");
-
-        //   var option = int.Parse(Console.ReadLine());
-        //   var store = _storeSingleton.Bookstores[option - 1];
-
-        //   return store;
-        // }
-
-        // private static Customer SelectACustomer()
-        // {
-        //   Log.Information("method: SelectACustomer()");
-
-        //   Console.WriteLine("Select a Customer: ");
-
-        //   var option = int.Parse(Console.ReadLine());
-        //   var customer = _customerSingleton.Customers[option - 1];
-
-        //   return customer;
-        // }
 
         // private static Product SelectProducts()
         // {

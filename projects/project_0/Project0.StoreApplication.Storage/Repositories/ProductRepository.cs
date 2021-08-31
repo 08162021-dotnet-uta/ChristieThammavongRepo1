@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Abstracts;
+using Project0.StoreApplication.Domain.Interfaces;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Adapters;
 
@@ -8,9 +9,10 @@ namespace Project0.StoreApplication.Storage.Repositories
   /// <summary>
   /// Repository for Products
   /// </summary>
-  public class ProductRepository
+  public class ProductRepository : IRepository<Product>
   {
-    private const string path = @"/home/christie/revature/christie_repo/data/products.xml";
+    private const string _path = @"/home/christie/revature/christie_repo/data/products.xml";
+    private static readonly FileAdapter _fileAdapter = new FileAdapter();
     public List<Product> Products
     {
       get;
@@ -18,11 +20,9 @@ namespace Project0.StoreApplication.Storage.Repositories
 
     public ProductRepository()
     {
-      var fileAdapter = new FileAdapter();
-
-      if (fileAdapter.ReadFromFile<Product>(path) == null)
+      if (_fileAdapter.ReadFromFile<Product>(_path) == null)
       {
-        fileAdapter.SaveToFile<Product>(path, new List<Product>()
+        _fileAdapter.SaveToFile<Product>(_path, new List<Product>()
         {
           new NonFiction() { Genre = "Autobiography" , Price = 15.00m},
           new NonFiction() { Genre = "Memoir" , Price = 15.00m },
@@ -31,8 +31,26 @@ namespace Project0.StoreApplication.Storage.Repositories
           new Fiction() { Genre = "Suspense" , Price = 18.00m}
         });
       }
+    }
 
-      Products = fileAdapter.ReadFromFile<Product>(path);
+    public bool Insert()
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public Product Update()
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public List<Product> Select()
+    {
+      return _fileAdapter.ReadFromFile<Product>(_path);
+    }
+
+    public bool Delete()
+    {
+      throw new System.NotImplementedException();
     }
   }
 }

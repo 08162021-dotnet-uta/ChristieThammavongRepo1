@@ -33,7 +33,7 @@ namespace Project0.StoreApplication.Client.Singletons
     /// </summary>
     private ProductSingleton()
     {
-      Products = _productRepository.Products;
+      Products = _productRepository.Select();
     }
   }
 }
