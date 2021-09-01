@@ -24,11 +24,11 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.SaveToFile<Product>(_path, new List<Product>()
         {
-          new NonFiction() { Genre = "Autobiography" , Price = 15.00m},
-          new NonFiction() { Genre = "Memoir" , Price = 15.00m },
-          new Fiction() { Genre = "Manga" , Price = 10.00m },
-          new Fiction() { Genre = "Romance" , Price = 18.00m},
-          new Fiction() { Genre = "Suspense" , Price = 18.00m}
+          new NonFiction() { ProductID = 1, Genre = "Autobiography" , Price = 15.00m},
+          new NonFiction() { ProductID = 2, Genre = "Memoir" , Price = 15.00m },
+          new Fiction() { ProductID = 3, Genre = "Manga" , Price = 10.00m },
+          new Fiction() { ProductID = 4, Genre = "Romance" , Price = 18.00m},
+          new Fiction() { ProductID = 5, Genre = "Suspense" , Price = 18.00m}
         });
       }
     }

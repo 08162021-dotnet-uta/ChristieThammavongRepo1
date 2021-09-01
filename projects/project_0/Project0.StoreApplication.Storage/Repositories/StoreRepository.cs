@@ -24,9 +24,9 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.SaveToFile<Bookstore>(_path, new List<Bookstore>()
         {
-          new Bookstore() { Location = "Denver" },
-          new Bookstore() { Location = "Boulder" },
-          new Bookstore() { Location = "Colorado Springs" }
+          new Bookstore() { StoreID = 1, Location = "Denver" },
+          new Bookstore() { StoreID = 2, Location = "Boulder" },
+          new Bookstore() { StoreID = 3, Location = "Colorado Springs" }
         });
       }
     }

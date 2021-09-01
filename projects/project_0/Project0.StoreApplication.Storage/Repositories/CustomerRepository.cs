@@ -19,9 +19,9 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.SaveToFile<Customer>(_path, new List<Customer>()
         {
-          new Customer() { firstName = "Tanjiro" , lastName = "Kamado"},
-          new Customer() { firstName = "Naruto" , lastName = "Uzumaki"},
-          new Customer() { firstName = "Kyo" , lastName = "Sohma" }
+          new Customer() { CustomerID = 1, firstName = "Tanjiro" , lastName = "Kamado"},
+          new Customer() { CustomerID = 2, firstName = "Naruto" , lastName = "Uzumaki"},
+          new Customer() { CustomerID = 3, firstName = "Kyo" , lastName = "Sohma" }
         });
       }
     }
