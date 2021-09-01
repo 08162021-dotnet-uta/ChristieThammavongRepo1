@@ -14,13 +14,14 @@ namespace Project0.StoreApplication.Client
         private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
         private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
         private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
+        private static readonly OrderSingleton _orderSingleton = OrderSingleton.Instance;
 
         private static void Main(string[] args)
         {
           Log.Logger = new LoggerConfiguration().WriteTo.File(_loggerFile).CreateLogger();
 
-          // runProgram();
-          HelloSQL();
+          runProgram();
+          // HelloSQL();
         }
 
         private static void runProgram()
@@ -31,14 +32,21 @@ namespace Project0.StoreApplication.Client
           if (role == "C")
           {
             Log.Information("role: customer");
-            MakeASelection<Customer>(_customerSingleton.Customers);
-            MakeASelection<Bookstore>(_storeSingleton.Bookstores);
-            MakeASelection<Product>(_productSingleton.Products);
+            var customer = _customerSingleton.Customers[MakeASelection<Customer>(_customerSingleton.Customers)];
+            var bookstore = _storeSingleton.Bookstores[MakeASelection<Bookstore>(_storeSingleton.Bookstores)];
+            var product = _productSingleton.Products[MakeASelection<Product>(_productSingleton.Products)];
+            Log.Information("add a new order");
+            // Create a new Order using Add method - from Joshua Posada
+            _orderSingleton.Orders.Add( new Order { Customer = customer, Bookstore = bookstore, Product = product, OrderDate = DateTime.Now});
+            // SaveOrder method from Akil Tomlinson
+            _orderSingleton.SaveOrder();
+            PrintLastContent<Order>(_orderSingleton.Orders);
           }
           else if (role == "S")
           {
             Log.Information("role: store representative");
-            MakeASelection<Bookstore>(_storeSingleton.Bookstores);
+            //var bookstore = _storeSingleton.Bookstores[MakeASelection<Bookstore>(_storeSingleton.Bookstores)];
+            PrintRepoContent<Order>(_orderSingleton.Orders);
           }
           else
           {
@@ -59,6 +67,14 @@ namespace Project0.StoreApplication.Client
           }
         }
 
+        private static void PrintLastContent<T>(List<T> data) where T : class
+        {
+          Log.Information($"method: PrintLastContent<{typeof(T)}>()");
+          int i = data.Count - 1;
+            
+          System.Console.WriteLine(data[i]);
+        }
+
         private static int MakeASelection<T>(List<T> data) where T : class
         {
           Log.Information($"method: MakeASelection<{typeof(T)}>()");
@@ -71,27 +87,28 @@ namespace Project0.StoreApplication.Client
           
           var selection = int.Parse(Console.ReadLine());
 
-          if (selection < data.Count)
+          if (selection - 1 < data.Count)
           {
-            return selection;
+            return selection - 1;
           }
           else
           {
+            Log.Information("Invalid selection");
             Console.WriteLine("Your selection is not valid.");
             return -1;
           }
         }
 
-        private static void HelloSQL()
-        {
-          var def = new EF();
+        // private static void HelloSQL()
+        // {
+        //   var def = new EF();
 
-            // def.SetCustomer(new Customer());
+        //     // def.SetCustomer(new Customer());
 
-          foreach (var item in def.GetCustomers())
-          {
-            Console.WriteLine(item);
-          }
-        }
+        //   foreach (var item in def.GetCustomers())
+        //   {
+        //     Console.WriteLine(item);
+        //   }
+        // }
     }
 }
