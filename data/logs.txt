@@ -402,3 +402,29 @@
 2021-08-31 23:47:05.812 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Abstracts.Product>()
 2021-08-31 23:47:05.812 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Abstracts.Product>()
 2021-08-31 23:47:08.852 -06:00 [INF] Invalid selection
+2021-09-01 07:56:32.819 -06:00 [INF] method: runProgram()
+2021-09-01 07:56:35.435 -06:00 [INF] role: customer
+2021-09-01 07:56:35.583 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Customer>()
+2021-09-01 07:56:35.584 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Customer>()
+2021-09-01 07:56:37.195 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Bookstore>()
+2021-09-01 07:56:37.195 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Bookstore>()
+2021-09-01 07:56:38.356 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Abstracts.Product>()
+2021-09-01 07:56:38.357 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Abstracts.Product>()
+2021-09-01 07:56:41.907 -06:00 [INF] add a new order
+2021-09-01 07:56:41.921 -06:00 [INF] method: PrintLastContent<Project0.StoreApplication.Domain.Models.Order>()
+2021-09-01 07:57:06.854 -06:00 [INF] method: runProgram()
+2021-09-01 07:57:09.006 -06:00 [INF] role: store representative
+2021-09-01 07:57:09.156 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Order>()
+2021-09-01 09:55:25.976 -06:00 [INF] method: runProgram()
+2021-09-01 09:55:33.398 -06:00 [INF] role: customer
+2021-09-01 09:55:33.625 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Customer>()
+2021-09-01 09:55:33.626 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Customer>()
+2021-09-01 09:55:41.505 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Models.Bookstore>()
+2021-09-01 09:55:41.505 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Bookstore>()
+2021-09-01 09:55:51.168 -06:00 [INF] method: MakeASelection<Project0.StoreApplication.Domain.Abstracts.Product>()
+2021-09-01 09:55:51.169 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Abstracts.Product>()
+2021-09-01 09:56:00.708 -06:00 [INF] add a new order
+2021-09-01 09:56:00.719 -06:00 [INF] method: PrintLastContent<Project0.StoreApplication.Domain.Models.Order>()
+2021-09-01 09:56:17.210 -06:00 [INF] method: runProgram()
+2021-09-01 09:56:19.748 -06:00 [INF] role: store representative
+2021-09-01 09:56:19.946 -06:00 [INF] method: PrintRepoContent<Project0.StoreApplication.Domain.Models.Order>()
