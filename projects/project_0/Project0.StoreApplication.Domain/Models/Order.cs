@@ -12,7 +12,12 @@ namespace Project0.StoreApplication.Domain.Models
     public byte OrderID { get; set; }
     public Customer Customer { get; set; }
     public Bookstore Bookstore { get; set; }
-    // public List<Product> Products { get; set; }
+    public Product Product { get; set; }
     public DateTime OrderDate { get; set; }
+
+    public override string ToString()
+    {
+      return $" {Bookstore} | {Customer} | {Product} | {OrderDate} ";
+    }
   }
 }
