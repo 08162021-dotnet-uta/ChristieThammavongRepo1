@@ -4,14 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo HTML</title>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-      }
-    </style>
+    <link href="Css.css" rel="stylesheet">
   </head>
   <body>
-    <div style="border: 3px solid orange; width: 400px; padding: 5px; margin: 3px;">
+    <div id="About">
       <img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png" alt="HTML logo" width="80px">
       <h1>About</h1>
       <p>Some text about this website</p>
@@ -32,7 +28,7 @@
       </ul>
       <h2>Upcoming Classes</h2>
       <table>
-        <thead style="text-align: center;">
+        <thead>
           <th>Location</th>
           <th>Topic</th>
         </thead>
@@ -48,7 +44,7 @@
         </tbody>
       </table>
     </div>
-    <form style="border: 3px solid orange; width: 400px; padding: 5px; margin: 3px;">
+    <form>
       <h3>Sign Up!</h3>
       <label for="name">Name: </label>
       <input type="text" id="name" name="name"><br>
@@ -60,7 +56,7 @@
         <option value="san francisco" selected>San Francisco</option>
       </select><br>
       <div>
-        <fieldset style="width: 300px;">
+        <fieldset>
           <legend>Gender: </legend>
           <label for="female">Female</label>
           <input type="radio" id="female" name="female">
