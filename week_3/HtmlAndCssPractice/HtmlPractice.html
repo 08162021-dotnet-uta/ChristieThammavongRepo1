@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo HTML</title>
+    <link href="Css.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="About">
+      <img src="https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png" alt="HTML logo" width="80px">
+      <h1>About</h1>
+      <p>Some text about this website</p>
+      <h2>Our Locations</h2>
+      <ul>
+        <li>USA</li>
+          <ul>
+            <li><a href="https://revature.com/" target="_blank">New York</a></li>
+            <li><a href="https://revature.com/" target="_blank">Columbus</a></li>
+            <li><a href="https://revature.com/" target="_blank">Austin</a></li>
+            <li><a href="https://revature.com/" target="_blank">Philly</a></li>
+          </ul>
+        <li>World</li>
+          <ul>
+            <li><a href="https://revature.com/" target="_blank">Ottawa</a></li>
+            <li><a href="https://revature.com/" target="_blank">Sydney</a></li>
+          </ul>
+      </ul>
+      <h2>Upcoming Classes</h2>
+      <table>
+        <thead>
+          <th>Location</th>
+          <th>Topic</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New York</td>
+            <td>Javascript & jQuery</td>
+          </tr>
+          <tr>
+            <td>San Francisco</td>
+            <td>HTML & CSS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form>
+      <h3>Sign Up!</h3>
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email: </label>
+      <input type="text" id="email" name="email"><br>
+      <label for="location">Location: </label>
+      <select type="select" id="location" name="location">
+        <option value="new york">New York</option>
+        <option value="san francisco" selected>San Francisco</option>
+      </select><br>
+      <div>
+        <fieldset>
+          <legend>Gender: </legend>
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="female">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="male">
+        </fieldset>
+      </div>
+      <label for="experience">Experience: </label><br>
+      <textarea id="experience" name="experience" rows="5"></textarea><br>
+      <input type="submit" value="Sign Up"><br>
+      <a href="https://twitter.com/?lang=en" target="_blank">Twitter |</a>
+      <a href="https://www.facebook.com/" target="_blank">Facebook |</a>
+      <a href="https://www.flickr.com/" target="_blank">Flickr</a>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <firstName>Tanjiro</firstName>
+    <lastName>Kamado</lastName>
+  </Customer>
+  <Customer>
+    <firstName>Naruto</firstName>
+    <lastName>Uzumaki</lastName>
+  </Customer>
+  <Customer>
+    <firstName>Kyo</firstName>
+    <lastName>Sohma</lastName>
+  </Customer>
+</ArrayOfCustomer>

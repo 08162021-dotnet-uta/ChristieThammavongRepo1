@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product xsi:type="NonFiction">
+    <BookType>Non-Fiction</BookType>
+    <Genre>Autobiography</Genre>
+    <Price>15.00</Price>
+  </Product>
+  <Product xsi:type="NonFiction">
+    <BookType>Non-Fiction</BookType>
+    <Genre>Memoir</Genre>
+    <Price>15.00</Price>
+  </Product>
+  <Product xsi:type="Fiction">
+    <BookType>Fiction</BookType>
+    <Genre>Manga</Genre>
+    <Price>10.00</Price>
+  </Product>
+  <Product xsi:type="Fiction">
+    <BookType>Fiction</BookType>
+    <Genre>Romance</Genre>
+    <Price>18.00</Price>
+  </Product>
+  <Product xsi:type="Fiction">
+    <BookType>Fiction</BookType>
+    <Genre>Suspense</Genre>
+    <Price>18.00</Price>
+  </Product>
+</ArrayOfProduct>
