@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,7 +45,17 @@ namespace StoreApplication
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "StoreApplication v1"));
             }
 
+            // To enable default text-only handlers for common error status codes
+            app.UseStatusCodePages();
+
             app.UseHttpsRedirection();
+
+            // Use this to redirect to the index HTML for any random path
+            app.UseRewriter(new RewriteOptions()
+                .AddRedirect("^$", "index.html"));
+
+            // Use the .js static files 
+            app.UseStaticFiles();
 
             app.UseRouting();
 
