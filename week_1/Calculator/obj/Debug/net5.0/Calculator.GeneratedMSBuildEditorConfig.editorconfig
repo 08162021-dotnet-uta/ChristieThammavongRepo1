@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Calculator
-build_property.ProjectDir = /home/christie/revature/christie_repo/week_1/Calculator/
+build_property.ProjectDir = C:\Users\ctham\Source\Repos\08162021-dotnet-uta\ChristieThammavongRepo1\week_1\Calculator\
