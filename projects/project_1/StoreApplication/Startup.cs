@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DbContextLayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +34,15 @@ namespace StoreApplication
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StoreApplication", Version = "v1" });
+            });
+
+            services.AddDbContext<P1_StoreApplicationDBContext>(options =>
+            {
+                // Connection String located in secrets.json
+                if(!options.IsConfigured)
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("P1_DB"));
+                }
             });
         }
 
