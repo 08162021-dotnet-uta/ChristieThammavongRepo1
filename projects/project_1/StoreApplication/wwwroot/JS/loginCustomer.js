@@ -17,7 +17,7 @@ submit.addEventListener('click', (e) => {
 	const Value = document.querySelector('#listofcustomers').value;
 
 	if (Value == " ") {
-		alert("It seems you don't have an account. Please register.");
+		alert("It seems you don't have an account. Please register. \nYou will be redirected.");
 		location.href = "../HTML/registerCustomer.html";
 	}
 	else {
