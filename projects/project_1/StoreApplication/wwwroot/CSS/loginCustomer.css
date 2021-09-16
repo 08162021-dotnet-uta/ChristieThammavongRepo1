@@ -30,6 +30,11 @@ h1 {
     font-weight: bold;
     display: block;
     padding: 5px;
+    top: 15%;
+}
+
+#listofcustomers {
+    width: 225px;
 }
 
 .submitbutton {

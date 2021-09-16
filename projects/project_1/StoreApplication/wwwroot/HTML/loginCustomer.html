@@ -9,13 +9,14 @@
 </head>
 <body>
     <header>Customer Login</header>
-    <div class="listofcustomers"></div>
 
     <div id="customerlogin">
         <h1>Please enter your name:</h1>
         <form class="customerlist" action="/action_page.php" method="get">
-            <input list="customers" name="customerdropdown" id="listofcustomers">
-            <datalist id="customers"></datalist>
+            <input list="customers" name="customerdropdown" id="listofcustomers" placeholder="Type or select your name">
+            <datalist id="customers">
+                <option value=" ">
+            </datalist>
         </form>
         <input class="submitbutton" type="submit">
     </div>
