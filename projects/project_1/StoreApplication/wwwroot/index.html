@@ -8,9 +8,16 @@
     <title>Store Application</title>
 </head>
 <body>
-    <button class="seecustomers">Click to see a list of customers</button>
-    <div class="listofcustomers">
+    <header>Welcome to Colorado Bookstore</header>
+    <div id="mainlogin">
+        <h1>Log in as a:</h1>
+        <button id="customerselection" onclick="CustomerLogin()">Customer</button>
+        <button id="storeselection" onclick="StoreLogin()">Store Representative</button>
+    </div>
 
+    <div id="mainregister">
+        <p>Don't have an account?</p>
+        <button id="registerselection" onclick="CustomerRegister()">Register</button>
     </div>
     <script src="index.js"></script>
 </body>
