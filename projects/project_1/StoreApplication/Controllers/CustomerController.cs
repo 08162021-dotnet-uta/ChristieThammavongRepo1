@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using ModelsLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +10,17 @@ using System.Threading.Tasks;
 
 namespace StoreApplication.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class CustomerController : Controller
     {
+        private readonly ICustomerRepository _customerRepo;
+
+        public CustomerController(ICustomerRepository cr)
+        {
+            _customerRepo = cr;
+        }
+
         // GET: CustomerController
         public ActionResult Index()
         {
@@ -16,9 +28,14 @@ namespace StoreApplication.Controllers
         }
 
         // GET: CustomerController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("ListOfCustomers")]
+        public async Task<List<ViewModelCustomer>> Details()
         {
-            return View();
+            // call the business layer method to return list of customers
+            //List<ViewModelCustomer> customers = await 
+            Task<List<ViewModelCustomer>> customers = _customerRepo.CustomerListAsync();
+            List<ViewModelCustomer> customersList = await customers;
+            return customersList;
         }
 
         // GET: CustomerController/Create

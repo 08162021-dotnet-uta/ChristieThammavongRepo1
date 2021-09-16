@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModelsLayer.EFModels;
+using ModelsLayer.ViewModels;
 
 namespace BusinessLayer.Interfaces
 {
-    class IModelMapper
+    public interface IModelMapper
     {
+        ViewModelCustomer CustomerToViewModelCustomer(Customer c) { throw new NotImplementedException(); }
+        Customer ViewModelCustomerToCustomer(ViewModelCustomer c) { throw new NotImplementedException(); }
     }
 }

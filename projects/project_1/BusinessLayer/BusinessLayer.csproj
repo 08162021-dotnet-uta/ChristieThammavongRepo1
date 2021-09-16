@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DbContextLayer\DbContextLayer.csproj" />
     <ProjectReference Include="..\ModelsLayer\ModelsLayer.csproj" />
-    <ProjectReference Include="..\project_1\DbContextLayer\DbContextLayer.csproj" />
   </ItemGroup>
 
 </Project>
