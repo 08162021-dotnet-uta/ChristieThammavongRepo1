@@ -1,16 +1,24 @@
-const listofcustomers = document.querySelector('.listofcustomers');
 const seecustomers = document.querySelector('.seecustomers');
 
 seecustomers.addEventListener('click', (e) => {
-	fetch('customer/ListOfCustomers')
-		.then(res => res.json())
-		.then(data => {
-			console.log(data)
-			const lop = document.querySelector('.listofcustomers');
-			for (let x = 0; x < data.length; x++) {
-				lop.innerHTML += `<p>The customer is ${data[x].fname} ${data[x].lname}.</p>`;
+	fetch('Customer/ListOfCustomers') // Fetch() is default 'GET'
+		.then(res => {
+			if (!res.ok) {
+				console.log('NOT OK')
+				throw new Error(`Network response was not ok (${res.status})`);
 			}
-	});
+			else {
+				return res.json();
+			}
+		})
+		.then(res => {
+			console.log(res)
+			const loc = document.querySelector('.listofcustomers');
+			for (let x = 0; x < res.length; x++) {
+				loc.innerHTML += `<p>The customer is ${res[x].vFirstName} ${res[x].vLastName}.</p>`;
+			}
+		})
+		.catch(err => console.log(`There was an error ${err}`));
 });
 
 function SeeCustomers() {

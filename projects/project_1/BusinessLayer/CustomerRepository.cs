@@ -28,7 +28,7 @@ namespace BusinessLayer
         /// <returns></returns>
         public async Task<List<ViewModelCustomer>> CustomerListAsync()
         {
-            List<Customer> customers = await _context.Customers.FromSqlRaw<Customer>("Select * FROM Customers").ToListAsync();
+            List<Customer> customers = await _context.Customers.FromSqlRaw<Customer>("Select * FROM Customer").ToListAsync();
             List<ViewModelCustomer> vmc = new List<ViewModelCustomer>();
             foreach (Customer c in customers)
             {
