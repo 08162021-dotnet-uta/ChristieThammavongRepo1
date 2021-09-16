@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApplication", "StoreApplication\StoreApplication.csproj", "{E7165631-BA16-464A-96F2-5D0D571E7F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbContextLayer", "DbContextLayer\DbContextLayer.csproj", "{7E7A2656-D950-48C9-98C7-E201DAE9F279}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbContextLayer", "DbContextLayer\DbContextLayer.csproj", "{7E7A2656-D950-48C9-98C7-E201DAE9F279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{8B178786-BACA-4D32-AD38-63430BACDA98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{8B178786-BACA-4D32-AD38-63430BACDA98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLayer", "..\TestLayer\TestLayer.csproj", "{C208B813-C3A4-4642-BADD-19171B44E3E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLayer", "TestLayer\TestLayer.csproj", "{C208B813-C3A4-4642-BADD-19171B44E3E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsLayer", "..\ModelsLayer\ModelsLayer.csproj", "{EAAB2AC4-AB59-47A5-91D5-0BB4C578C3E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsLayer", "ModelsLayer\ModelsLayer.csproj", "{EAAB2AC4-AB59-47A5-91D5-0BB4C578C3E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
