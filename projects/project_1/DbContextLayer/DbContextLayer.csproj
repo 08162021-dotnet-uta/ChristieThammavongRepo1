@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ModelsLayer\ModelsLayer.csproj" />
+    <ProjectReference Include="..\ModelsLayer\ModelsLayer.csproj" />
   </ItemGroup>
 
 </Project>
