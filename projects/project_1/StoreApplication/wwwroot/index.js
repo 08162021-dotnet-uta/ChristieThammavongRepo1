@@ -1,18 +1,11 @@
-const listofcustomers = document.querySelector('.listofcustomers');
-const seecustomers = document.querySelector('.seecustomers');
+function CustomerLogin() {
+    location.href = "../HTML/loginCustomer.html";
+}
 
-seecustomers.addEventListener('click', (e) => {
-	fetch('customer/ListOfCustomers')
-		.then(res => res.json())
-		.then(data => {
-			console.log(data)
-			const lop = document.querySelector('.listofcustomers');
-			for (let x = 0; x < data.length; x++) {
-				lop.innerHTML += `<p>The customer is ${data[x].fname} ${data[x].lname}.</p>`;
-			}
-	});
-});
+function StoreLogin() {
+    location.href = "../HTML/loginStore.html";
+}
 
-function SeeCustomers() {
-    location.href = "customer.html";
+function CustomerRegister() {
+    location.href = "../HTML/registerCustomer.html";
 }

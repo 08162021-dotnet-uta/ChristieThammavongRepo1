@@ -38,14 +38,14 @@ namespace StoreApplication
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StoreApplication", Version = "v1" });
             });
 
-            //services.AddDbContext<P1_StoreApplicationDBContext>(options =>
-            //{
-            //    // Connection String located in secrets.json
-            //    if(!options.IsConfigured)
-            //    {
-            //        options.UseSqlServer(Configuration.GetConnectionString("P1DB"));
-            //    }
-            //});
+            services.AddDbContext<P1_StoreApplicationDBContext>(options =>
+            {
+                // Connection String located in secrets.json
+                if (!options.IsConfigured)
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("P1DB"));
+                }
+            });
 
             //registering classes with the DI system
             services.AddScoped<ICustomerRepository, CustomerRepository>();
