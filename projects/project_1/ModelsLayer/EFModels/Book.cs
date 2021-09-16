@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace DbContextLayer.Models
+namespace ModelsLayer.EFModels
 {
     public partial class Book
     {

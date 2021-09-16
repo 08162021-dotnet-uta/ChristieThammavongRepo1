@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace DbContextLayer.Models
+namespace ModelsLayer.EFModels
 {
+    /// <summary>
+    /// EF Customer
+    /// </summary>
     public partial class Customer
     {
         public Customer()

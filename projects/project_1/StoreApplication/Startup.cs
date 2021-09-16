@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer;
+using BusinessLayer.Interfaces;
 using DbContextLayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,14 +38,18 @@ namespace StoreApplication
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StoreApplication", Version = "v1" });
             });
 
-            services.AddDbContext<P1_StoreApplicationDBContext>(options =>
-            {
-                // Connection String located in secrets.json
-                if(!options.IsConfigured)
-                {
-                    options.UseSqlServer(Configuration.GetConnectionString("P1_DB"));
-                }
-            });
+            //services.AddDbContext<P1_StoreApplicationDBContext>(options =>
+            //{
+            //    // Connection String located in secrets.json
+            //    if(!options.IsConfigured)
+            //    {
+            //        options.UseSqlServer(Configuration.GetConnectionString("P1DB"));
+            //    }
+            //});
+
+            //registering classes with the DI system
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IModelMapper, ModelMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
