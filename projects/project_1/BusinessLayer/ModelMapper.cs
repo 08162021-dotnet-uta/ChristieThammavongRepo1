@@ -36,5 +36,29 @@ namespace BusinessLayer
             c.LastName = vmc.VLastName;
             return c;
         }
+
+        /// <summary>
+        /// This method takes a Store and returns the mapping to a ViewModelStore
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static ViewModelStore StoreToViewModelStore(Store s)
+        {
+            ViewModelStore vms = new ViewModelStore();
+            vms.VLocation = s.Location;
+            return vms;
+        }
+
+        /// <summary>
+        /// This method takes a ViewModelStore and returns the mapping to a Store
+        /// </summary>
+        /// <param name="vms"></param>
+        /// <returns></returns>
+        public static Store ViewModelStoreToStore(ViewModelStore vms)
+        {
+            Store s = new Store();
+            s.Location = vms.VLocation;
+            return s;
+        }
     }
 }

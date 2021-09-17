@@ -48,8 +48,9 @@ namespace StoreApplication
             });
 
             //registering classes with the DI system
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IModelMapper, ModelMapper>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ModelsLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace StoreApplication.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class StoreController : Controller
     {
+        private readonly IStoreRepository _storeRepo;
+
+        public StoreController(IStoreRepository sr)
+        {
+            _storeRepo = sr;
+        }
+
         // GET: StoreController
         public ActionResult Index()
         {
@@ -16,9 +27,12 @@ namespace StoreApplication.Controllers
         }
 
         // GET: StoreController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("ListOfStores")]
+        public async Task<List<ViewModelStore>> Details()
         {
-            return View();
+            Task<List<ViewModelStore>> stores = _storeRepo.StoreListAsync();
+            List<ViewModelStore> storesList = await stores;
+            return storesList;
         }
 
         // GET: StoreController/Create
