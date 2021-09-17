@@ -51,6 +51,7 @@ namespace StoreApplication
             services.AddScoped<IModelMapper, ModelMapper>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

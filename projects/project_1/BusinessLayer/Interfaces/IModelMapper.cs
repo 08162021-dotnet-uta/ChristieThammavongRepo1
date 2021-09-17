@@ -14,5 +14,7 @@ namespace BusinessLayer.Interfaces
         Customer ViewModelCustomerToCustomer(ViewModelCustomer c) { throw new NotImplementedException(); }
         ViewModelStore StoreToViewModelStore(Store s) { throw new NotImplementedException(); }
         Store ViewModelStoreToStore(ViewModelStore s) { throw new NotImplementedException(); }
+        ViewModelBook BookToViewModelBook(Book b) { throw new NotImplementedException(); }
+        Book ViewModelBookToBook(ViewModelBook b) { throw new NotImplementedException(); }
     }
 }

@@ -60,5 +60,35 @@ namespace BusinessLayer
             s.Location = vms.VLocation;
             return s;
         }
+
+        /// <summary>
+        /// This method takes a Book and returns the mapping to a ViewModelBook
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static ViewModelBook BookToViewModelBook(Book b)
+        {
+            ViewModelBook vmb = new ViewModelBook();
+            vmb.VBookTypeId = b.BookTypeId;
+            vmb.VBookGenreId = b.BookGenreId;
+            vmb.VBookPrice = b.BookPrice;
+            vmb.VQuantityAvailable = b.QuantityAvailable;
+            return vmb;
+        }
+
+        /// <summary>
+        /// This method takes a ViewModelBook and returns the mapping to a Book
+        /// </summary>
+        /// <param name="vmb"></param>
+        /// <returns></returns>
+        public static Book ViewModelBookToBook(ViewModelBook vmb)
+        {
+            Book b = new Book();
+            b.BookTypeId = vmb.VBookTypeId;
+            b.BookGenreId = vmb.VBookGenreId;
+            b.BookPrice = vmb.VBookPrice;
+            b.QuantityAvailable = vmb.VQuantityAvailable;
+            return b;
+        }
     }
 }

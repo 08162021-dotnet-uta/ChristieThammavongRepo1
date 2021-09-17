@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ModelsLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace StoreApplication.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class BookController : Controller
     {
+        private readonly IBookRepository _bookRepo;
+
+        public BookController(IBookRepository br)
+        {
+            _bookRepo = br;
+        }
+
         // GET: BookController
         public ActionResult Index()
         {
@@ -16,9 +27,12 @@ namespace StoreApplication.Controllers
         }
 
         // GET: BookController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("ListOfBooks")]
+        public async Task<List<ViewModelBook>> Details()
         {
-            return View();
+            Task<List<ViewModelBook>> books = _bookRepo.BookListAsync();
+            List<ViewModelBook> booksList = await books;
+            return booksList;
         }
 
         // GET: BookController/Create
