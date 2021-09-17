@@ -1,2 +1,64 @@
-﻿body {
+﻿header {
+    font-size: 30px;
+    padding: 15px 15px 15px 20px;
+    margin: -10px;
+    background-color: lightslategray;
+    color: white;
 }
+
+.logoutbutton {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    left: 45%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/*#customerlogin {
+    background-color: lightseagreen;
+    border: solid 2px black;
+    width: 375px;
+    height: 220px;
+    margin: 100px auto 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.booklist {
+    margin: 0;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    top: 15%;
+}
+
+#listofcustomers {
+    width: 225px;
+}
+
+.submitbutton {
+    margin: 0;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+}
+*/
