@@ -1,2 +1,52 @@
-﻿body {
+﻿header {
+    font-size: 30px;
+    padding: 15px 15px 15px 20px;
+    margin: -10px;
+    background-color: lightslategray;
+    color: white;
+}
+
+#storelogin {
+    background-color: lightseagreen;
+    border: solid 2px black;
+    width: 300px;
+    height: 250px;
+    margin: 100px auto 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.storelist {
+    margin: 0;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    top: 10%;
+}
+
+#listofstores {
+    width: 225px;
+}
+
+.submitbutton {
+    margin: 0;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
 }

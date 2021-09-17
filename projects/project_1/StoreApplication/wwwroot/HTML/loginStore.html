@@ -8,6 +8,16 @@
     <title>Store Login</title>
 </head>
 <body>
+    <header>Store Login</header>
+
+    <div id="storelogin">
+        <h1>Please select your store location:</h1>
+        <form class="storelist" action="/action_page.php" method="get">
+            <input list="stores" name="storedropdown" id="listofstores" placeholder="Type or select your store">
+            <datalist id="stores"></datalist>
+        </form>
+        <input class="submitbutton" type="submit">
+    </div>
     <script src="../JS/loginStore.js"></script>
 </body>
 </html>
