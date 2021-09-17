@@ -33,12 +33,26 @@
 
 --INSERT INTO [Order](CustomerID, StoreID, BookID, Quantity, OrderDate)
 --VALUES (1, 3, 5, 2, GETDATE());
-SELECT * FROM [Order];
+--SELECT * FROM [Order];
 
-SELECT Book.BookID, BookType.BookType, BookGenre.BookGenre, Book.BookPrice, Book.QuantityAvailable
-FROM ((Book
-INNER JOIN BookType
-ON BookType.BookTypeID = Book.BookTypeID)
-INNER JOIN BookGenre
-ON BookGenre.BookGenreID = Book.BookGenreID);
+--SELECT Book.BookID, BookType.BookType, BookGenre.BookGenre, Book.BookPrice, Book.QuantityAvailable
+--FROM ((Book
+--INNER JOIN BookType
+--ON BookType.BookTypeID = Book.BookTypeID)
+--INNER JOIN BookGenre
+--ON BookGenre.BookGenreID = Book.BookGenreID);
 
+
+CREATE PROCEDURE GetBooks
+AS
+BEGIN
+	SELECT Book.BookID, BookType.BookType, BookGenre.BookGenre, Book.BookPrice, Book.QuantityAvailable
+	FROM ((Book
+	INNER JOIN BookType
+	ON BookType.BookTypeID = Book.BookTypeID)
+	INNER JOIN BookGenre
+	ON BookGenre.BookGenreID = Book.BookGenreID);
+END;
+GO
+
+EXECUTE GetBooks;
