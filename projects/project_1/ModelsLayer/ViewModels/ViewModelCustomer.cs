@@ -12,6 +12,7 @@ namespace ModelsLayer.ViewModels
 	/// </summary>
     public class ViewModelCustomer
     {
+		public int VCustomerId { get; set; }
 
 		[StringLength(100, MinimumLength = 1)]
         public string VFirstName { get; set; }

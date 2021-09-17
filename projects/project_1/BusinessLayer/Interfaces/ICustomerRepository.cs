@@ -10,5 +10,7 @@ namespace BusinessLayer.Interfaces
     public interface ICustomerRepository
     {
         Task<List<ViewModelCustomer>> CustomerListAsync();
+        Task<ViewModelCustomer> RegisterCustomerAsync(ViewModelCustomer vmc);
+        Task<ViewModelCustomer> LoginCustomerAsync(ViewModelCustomer vmc);
     }
 }

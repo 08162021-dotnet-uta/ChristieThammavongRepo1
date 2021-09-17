@@ -39,9 +39,21 @@ namespace StoreApplication.Controllers
         }
 
         // GET: CustomerController/Create
-        public ActionResult Create()
+        [HttpPost("RegisterCustomer")]
+        public async Task<ActionResult<ViewModelCustomer>> Create(ViewModelCustomer c)
         {
-            return View();
+            if (!ModelState.IsValid) return BadRequest();
+
+            //ViewModelCustomer c = new ViewModelCustomer() { Fname = fname, Lname = lname };
+            //send fname and lname into a method of the business layer to check the Db fo that guy/gal;
+            ViewModelCustomer c1 = await _customerRepo.RegisterCustomerAsync(c);
+
+            if (c1 == null)
+            {
+                return NotFound();
+            }
+
+            return Created($"~customer/{c1.VCustomerId}", c1);
         }
 
         // POST: CustomerController/Create
