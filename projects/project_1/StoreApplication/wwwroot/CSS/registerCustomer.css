@@ -1,2 +1,63 @@
-﻿body {
+﻿header {
+    font-size: 30px;
+    padding: 15px 15px 15px 20px;
+    margin: -10px;
+    background-color: lightslategray;
+    color: white;
+}
+
+#customerregistration {
+    background-color: lightseagreen;
+    border: solid 2px black;
+    width: 375px;
+    height: 325px;
+    margin: 100px auto 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#newcustomer {
+    margin: 0;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    top: 35%;
+}
+
+.firstname, .lastname {
+    margin: 0;
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    top: 20%;
+    margin-bottom: 10px;
+}
+
+.submitbutton {
+    margin: 0;
+    position: relative;
+    top: 15%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    margin-top: 20px;
 }
