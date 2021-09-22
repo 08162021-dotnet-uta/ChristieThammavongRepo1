@@ -1,0 +1,52 @@
+<p>form-examples works!</p>
+
+<!-- <form (submit)="submitReactiveForm()" [formGroup]="reactiveformexample">
+  <label for="fname">First Name:</label>
+  <input type="text" name="fname" formControlName="fname" required/>
+  <br />
+  <label for="lname">Last Name:</label>
+  <input type="text" name="lname" formControlName="lname" required/>
+  <br />
+  <label for="email">Email:</label>
+  <input type="email" name="email" formControlName="email" />
+  <br />
+  <label for="phonenumber">Phone Number:</label>
+  <input type="tel" name="phonenumber" formControlName="phonenumber" required/>
+  <br />
+  <label for="username">Username:</label>
+  <input type="text" name="username" formControlName="username" required/>
+  <br />
+  <label for="password">Password:</label>
+  <input type="password" name="password" formControlName="password" required/>
+  <br>
+  <button type="submit">Submit the Reactive Form!</button>
+</form> -->
+
+<!-- template-driven form example -->
+<form (submit)="submitTemplateForm()">
+  <label for="fname2">First Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="fname2"
+    name="fname2"
+    required
+    pattern="[a-zA-Z]"
+  />
+  <br />
+  <label for="lname2">Last Name:</label>
+  <input type="text" [(ngModel)]="lname2" name="lname2" required />
+  <br />
+  <label for="email2">Email:</label>
+  <input type="email" [(ngModel)]="email2" name="email2" />
+  <br />
+  <label for="phonenumber2">Phone Number:</label>
+  <input type="tel" [(ngModel)]="phonenumber2" name="phonenumber2" required />
+  <br />
+  <label for="username2">Username:</label>
+  <input type="text" [(ngModel)]="username2" name="username2" required />
+  <br />
+  <label for="password2">Password:</label>
+  <input type="password" [(ngModel)]="password2" name="password2" required />
+  <br />
+  <button type="submit">Submit the Reactive Form!</button>
+</form>
