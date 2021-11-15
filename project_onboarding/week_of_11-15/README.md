@@ -49,8 +49,6 @@ f3() -->""
 Notes:
 Your function should return a 'function', not a string.
 
-<br>
-
 ## C#/.NET
 
 Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.
